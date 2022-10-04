@@ -4,6 +4,7 @@
     <modules>
       <module fileurl="file://$PROJECT_DIR$/.idea/HrtsCase.iml" filepath="$PROJECT_DIR$/.idea/HrtsCase.iml" />
       <module fileurl="file://$PROJECT_DIR$/mergeString/mergeString.iml" filepath="$PROJECT_DIR$/mergeString/mergeString.iml" />
+      <module fileurl="file://$PROJECT_DIR$/shoppingCart/shoppingCart.iml" filepath="$PROJECT_DIR$/shoppingCart/shoppingCart.iml" />
       <module fileurl="file://$PROJECT_DIR$/theNearNumbersProblem/theNearNumbersProblem.iml" filepath="$PROJECT_DIR$/theNearNumbersProblem/theNearNumbersProblem.iml" />
     </modules>
   </component>

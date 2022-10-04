@@ -1,33 +1,63 @@
 import exception.InvalidNumberofCharactersException;
 
+
+import java.util.Arrays;
 import java.util.Scanner;
 
 public class MergeString {
-    public static void main(String[] args) throws InvalidNumberofCharactersException {
 
+    // Problemi çözen fonksiyon
+    // İki stringin lengthlerini karşılaştırdıktan sonra, en küçük olan stringin lengthini belirledim.
+    // İlk yaptığım loopta, stringlerin karakterlerini sırayla, en küçük string bitene kadar sıralıyorum.
+    // Ardından geri kalanı, büyük stringlerin karakterleriyle doldurduktan sonra, çıktıyı döndürüyorum.
 
-        Scanner scanner = new Scanner(System.in); //Kullanıcıdan veri almak.
+    public static String mergeStrings(String a, String b)
+    {
+        String output = "";
 
-        System.out.print("Please Enter First Sentence: ");
-        String a = scanner.nextLine();//Kullanıcıdan veri almak.
-        int a1 = a.length(); // String ifadenin karakter sayısını buluyoruz.
+        int aLength = a.length();
+        int bLength = b.length();
 
-        System.out.print("Please Enter Second Sentence: ");
-        String b = scanner.nextLine();//Kullanıcıdan veri almak.
-        int b1 = b.length();// String ifadenin karakter sayısını buluyoruz.
-
-
-        if( (a1 > 1 && a1 < 2500)  && (b1 > 1 && b1 < 2500) ){ //Karakter sayısı için limir belirliyoruz.
-
-            System.out.println("New Sentence: " + a + b);
-
-        }  else {
-
-            throw  new InvalidNumberofCharactersException("Number of Characters must be less than 2500 and greater than 1.");// Yanlış karakter sayısı adında bir hata çıktısı alıyoruz.
-
+        int minLength;
+        if(aLength > bLength){
+            minLength = bLength;
+        } else {
+            minLength = aLength;
         }
 
+        for (int i = 0; i < minLength; i++) {
+            output += a.charAt(i) + "" + b.charAt(i);
+        }
+
+        if(minLength == bLength){
+            for (int i = 0; i < a.length() - minLength; i++) {
+                output += a.charAt(i);
+            }
+        } else {
+            for (int i = 0; i < b.length() - minLength; i++) {
+                output += b.charAt(i);
+            }
+        }
+
+        return output;
 
 
+    }
+
+
+    public static void main(String[] args) {
+
+        Scanner scanner = new Scanner(System.in);
+
+        System.out.print("Enter two strings\nA: ");
+        String A = scanner.next();
+        System.out.print("B: ");
+        String B = scanner.next();
+
+        if( ! ( (A.length() > 1 && A.length() < 2500) && (B.length() > 1 && B.length() < 2500) ) ){
+            throw new RuntimeException("Invalid string sizes.");
+        }
+
+        System.out.println("Output: " + mergeStrings(A, B));
     }
 }
