@@ -88,9 +88,7 @@ public class shoppingCart {
         int listLength = scanner.nextInt(); // Listeye eklenecek eleman sayısı
         int[] numberList = new int[listLength]; // Kullanıcıdan alınan eleman sayısında yeni liste oluşturma.
 
-        int temp; // Dizi Değişkeni
-
-
+        
         if (listLength > 1 && listLength < 200 ) {
             for (int i = 0; i < numberList.length; i++) { //Eleman sayısı kadar dönecek for döngüsü.
 
